@@ -1,0 +1,23 @@
+chest<-c(rep("gold",20),rep("silver",30),rep("bronze",50))
+print(sample(chest,10))
+
+
+print(sample(c("success","failure"),10,replace = T,prob=c(0.8,0.2)))
+
+N=5000
+n=20
+sum=0
+for(val in 1:N)
+{
+  a=as.integer(any(duplicated(sample(365,n,replace=TRUE))))
+  sum=sum+a
+}
+prob=sum/N
+print(prob)
+
+
+getmode <- function(v)
+{
+  uniqv<-unique(v)
+  uniqv[which.max(tabulate(match(v,uniqv)))]
+}
